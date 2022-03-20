@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import styles from '../styles/Footer.module.css'
 export const Footer = () => {
+  console.log('====================================');
+  console.log(process.env.MONGODB_URL);
+  console.log('====================================');
   return (
     <div className={styles.container}>
       <div className={styles.item}>

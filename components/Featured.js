@@ -21,11 +21,6 @@ export const Featured = () => {
       setIndex(index !== 2 ? index+1 : 0)
     }
   }
-
-  console.log('====================================');
-  console.log(index);
-  console.log('====================================');
-  
   return (
     <div className={styles.container}>            
         <div className={styles.wrapper} style={{ transform: `translateX(${index * -100 }vw)`}}>

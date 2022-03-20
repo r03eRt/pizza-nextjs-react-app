@@ -142,7 +142,7 @@ const Cart = () => {
                 <button className={styles.payButton}>CASH ON DELIVERY</button>
                 <PayPalScriptProvider
                       options={{
-                          "client-id": "test",
+                          "client-id": "AaJpMFqdYGqbgBbLbwxvjrTDf4suD2RCbU1RgIlTEoh_uPsKdWoTgEKhwtgRPAGLA0mblsmMWTd-yCiR",
                           components: "buttons",
                           currency: "EUR",
                           "disable-funding": "credit,card,sofort"

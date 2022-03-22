@@ -122,13 +122,22 @@ export default function Index({ orders, products }) {
   )
 }
 
-export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps = async (ctx) => {
+    const myCookie = ctx.req?.cookies || "";
+    if(myCookie.token !== process.env.TOKEN) {
+        return {
+            redirect: {
+                destination: '/admin/login',
+                permanent: false
+            }
+        }
+    }
     const productRes = await axios.get(`http://localhost:3000/api/products`);
     const orderRes = await axios.get(`http://localhost:3000/api/orders`);
     return {
-    props: {
-            orders: orderRes.data,
-            products: productRes.data
-        }
+        props: {
+                orders: orderRes.data,
+                products: productRes.data
+            }
     }
 }
